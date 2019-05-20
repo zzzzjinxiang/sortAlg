@@ -1,30 +1,39 @@
 package com.company;
 
+import java.util.Iterator;
+
 public class heapSort {
-    public void heapify(Integer[] arrays,int n,int i)
+    public static void heapify(int[] arrays,int arrLength,int index)
     {
         //任意位置的上浮
         //重构堆
-        if(i>=n){
+        if(index>=arrLength){
             return;
         }
-        int parent = (n-1)/2;
-        int left = 2*i+1;
-        int right = 2*i+2;
-        int max = i;
-        if(left < n && arrays[left]>arrays[max]){
+        int parent = (arrLength-1)/2;
+        int left = 2*index+1;
+        int right = 2*index+2;
+        int max = index;
+        if(left < arrLength && arrays[left]>arrays[max]){
             max = left;
         }
-        if(right < n && arrays[right]>arrays[max]){
+        if(right < arrLength && arrays[right]>arrays[max]){
             max=right;
         }
-        if(max != i) {
-            swap(arrays,max,i);
-            heapify(arrays,n,max);
+        if(max != index) {
+            swap(arrays,max,index);
+            heapify(arrays,arrLength,max);
+        }
+    }
+    public static void main(String[] args){
+        int[] a = {1,2,6,3,4,7,9};
+        heapSortOut(a,a.length);
+        for(int x:a){
+            System.out.println(x);
         }
     }
 
-    public void buildHeapify(Integer[] tree,int length){
+    public static void buildHeapify(int[] tree,int length){
         //整体上浮建立堆
         int last_node = length-1;
         int parent = (last_node-1)/2;
@@ -33,15 +42,15 @@ public class heapSort {
         }
     }
 
-    public void heapSortOut(Integer[] tree, int length){
+    public static void heapSortOut(int[] tree, int length){
         buildHeapify(tree,length);
         for(int i = length-1;i>=0;i--) {
             swap(tree, i, 0);
-            heapify(tree,i-1,0);
+            heapify(tree,i,0);
         }
     }
 
-    private static void swap(Integer[] tree,int max, int i){
+    private static void swap(int[] tree,int max, int i){
         int temp = tree[i];
         tree[i] = tree[max];
         tree[max] = temp;

@@ -1,4 +1,4 @@
-package com.company;
+package com.alg.Sorted;
 
 public class disgoint_set {
     public void initialize(int[] arr, int k){

@@ -1,4 +1,4 @@
-package com.company;
+package com.alg.Sorted;
 
 public class QuickSortAlg {
     public static void quickSort(int[] arrs,int begin,int end){

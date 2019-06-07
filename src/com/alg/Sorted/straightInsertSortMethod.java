@@ -1,4 +1,4 @@
-package com.company;
+package com.alg.Sorted;
 
 public class straightInsertSortMethod {
     //选取一个有序表，一个无序表

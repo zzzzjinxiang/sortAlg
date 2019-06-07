@@ -1,4 +1,4 @@
-package com.company;
+package com.alg.Sorted;
 
 public class HillSortAlg {
     public static void sorted(int[] arrs){

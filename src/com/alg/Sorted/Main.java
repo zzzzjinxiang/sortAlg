@@ -1,4 +1,4 @@
-package com.company;
+package com.alg.Sorted;
 
 
 import java.util.*;

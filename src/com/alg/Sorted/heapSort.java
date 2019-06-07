@@ -1,6 +1,4 @@
-package com.company;
-
-import java.util.Iterator;
+package com.alg.Sorted;
 
 public class heapSort {
     public static void heapify(int[] arrays,int arrLength,int index)
@@ -25,6 +23,15 @@ public class heapSort {
             heapify(arrays,arrLength,max);
         }
     }
+
+    public static void heapyDown(int[] arr,int index,int length){
+        while(index<length && arr[index]>arr[(index-1)>>1]){
+                swap(arr,index,(index-1)>>1);
+                index = (index-1)/2;
+        }
+
+    }
+
     public static void main(String[] args){
         int[] a = {1,2,6,3,4,7,9};
         heapSortOut(a,a.length);

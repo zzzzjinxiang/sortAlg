@@ -19,13 +19,14 @@ public class denseGraph {
 
     public void addEdge(int v,int w){
 
-        if(v>0&&v<n&&w>0&&w<m) {
-            if(hasEdge(v,w))
+        assert v>=0 && v<n;
+        assert w>=0 && v<m;
+
+        if(hasEdge(v,w))
                 return;
-            map[v][w] = true;
-        }
+        map[v][w] = true;
         if(!directed)
-            map[w][v]=true;
+            map[w][v] = true;
         m++;
     }
 
